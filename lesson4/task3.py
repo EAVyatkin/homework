@@ -7,7 +7,10 @@
 # 4 --> 4
 
 def sum_digits(num):
-    # Здесь нужно написать код
+    list_num = [int(x) for x in str(num)]
+    our_sum = 0
+    for i in list_num:
+        our_sum += i
     return our_sum
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
