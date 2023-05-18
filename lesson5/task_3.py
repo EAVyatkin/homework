@@ -19,7 +19,13 @@
 
 
 def everything_for_your_cat(cats_data):
-    # Здесь нужно написать код
+    cats_dict = {cat_data[2:]: [] for cat_data in cats_data}
+    for cat_data in cats_data:
+        cats_dict[cat_data[2:]].append('{}, {}'.format(cat_data[0], cat_data[1]))
+    our_str = []
+    for own in cats_dict.keys():
+        our_str.append('{} {}: {}\n'.format(*own, '; '.join(cats_dict[own])))
+    our_str = ''.join(our_str)
     return our_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

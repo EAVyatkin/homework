@@ -14,7 +14,12 @@
 
 
 def scrabble(word):
-    # Здесь нужно написать код
+    scrabble_point = {"авеёинорст": 1, "дклмпу": 2, "бгья": 3, "йы": 4, "жзхцч": 5, "фшэю": 8, "щ": 10, "ъ": 15}
+    points = 0
+    for w in word:
+        for key in scrabble_point.keys():
+            if w in key:
+                points += scrabble_point[key]
     return points
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ

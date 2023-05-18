@@ -7,7 +7,12 @@
 
 
 def repeats(our_str):
-    # Здесь нужно написать код
+    letters_dict, new_str = {letter: 0 for letter in our_str}, []
+    for letter in our_str:
+        letters_dict[letter] += 1
+        new_str.append('{}_{}'.format(letter, letters_dict[letter]))
+    new_str = ''.join(new_str)
+    return new_str
     return new_str
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
