@@ -9,7 +9,21 @@
 # Segment((-2, -3), (4, 5)).x_axis_intersection() --> True
 # Segment((-2, -3), (-4, -5)).y_axis_intersection() --> False
 
-# Здесь пишем код
+class Segment:
+
+    def __init__(self, coord1, coord2):
+        self.x1, self.y1 = coord1
+        self.x2, self.y2 = coord2
+
+    def length(self):
+        """Находим длину отрезка по теореме Пифагора"""
+        return round(((self.x2 - self.x1) ** 2 + (self.y2 - self.y1) ** 2) ** 0.5, 2)
+
+    def x_axis_intersection(self):
+        return min(self.y1, self.y2) <= 0 <= max(self.y1, self.y2)
+
+    def y_axis_intersection(self):
+        return min(self.x1, self.x2) <= 0 <= max(self.x1, self.x2)
 
 # Ниже НИЧЕГО НЕ НАДО ИЗМЕНЯТЬ
 
